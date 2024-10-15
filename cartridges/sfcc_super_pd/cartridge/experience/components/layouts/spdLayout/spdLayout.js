@@ -25,11 +25,15 @@ module.exports.render = function (context, modelIn) {
 
     var component = context.component;
     var regions = PageRenderHelper.getRegionModelRegistry(component);
+    var componentId = context.component.ID;
 
-    model.cssSelector = 'layout-' + layoutEditor.key;
+    var cssSelectorByEditor = 'layout-' + layoutEditor.key;
+    var cssSelectorForIndividualRegion = 'layout-' + componentId;
+
+    model.cssSelector = classNameForIndividualRegion;
     model.regionsCss = layoutEditor.regionsRawCss;
-    model.containerCss = layoutEditor.containerRawCss;
-
+    model.containerCss = layoutEditor.containerRawCss.replace(cssSelectorByEditor, cssSelectorForIndividualRegion);
+    
     model.regions = regions;
     return new Template('experience/components/layouts/spdLayout').render(model).text;
 };
