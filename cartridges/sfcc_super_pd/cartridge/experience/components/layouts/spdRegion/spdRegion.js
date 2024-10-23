@@ -25,7 +25,7 @@ module.exports.render = function (context, modelIn) {
     var cssSelectorForIndividualRegion = 'region-' + componentId;
     
     if (regionEditor) {
-        regionClassName += ' ' + classNameForIndividualRegion;
+        regionClassName += ' ' + cssSelectorForIndividualRegion;
     }
 
     var componentRenderSettings = context.componentRenderSettings;

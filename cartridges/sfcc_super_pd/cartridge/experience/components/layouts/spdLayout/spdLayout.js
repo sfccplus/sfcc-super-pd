@@ -30,7 +30,7 @@ module.exports.render = function (context, modelIn) {
     var cssSelectorByEditor = 'layout-' + layoutEditor.key;
     var cssSelectorForIndividualRegion = 'layout-' + componentId;
 
-    model.cssSelector = classNameForIndividualRegion;
+    model.cssSelector = cssSelectorForIndividualRegion;
     model.regionsCss = layoutEditor.regionsRawCss;
     model.containerCss = layoutEditor.containerRawCss.replace(cssSelectorByEditor, cssSelectorForIndividualRegion);
     
